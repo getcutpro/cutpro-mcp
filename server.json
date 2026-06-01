@@ -1,0 +1,41 @@
+{
+	"$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+	"name": "io.github.getcutpro/cutpro",
+	"title": "CutPro",
+	"description": "AI clips from long videos: analyze, clip, render and publish via the CutPro API.",
+	"version": "1.0.2",
+	"repository": {
+		"url": "https://github.com/getcutpro/mcp",
+		"source": "github"
+	},
+	"packages": [
+		{
+			"registryType": "npm",
+			"registryBaseUrl": "https://registry.npmjs.org",
+			"identifier": "@cutpro/mcp",
+			"version": "1.0.2",
+			"transport": {
+				"type": "stdio"
+			},
+			"environmentVariables": [
+				{
+					"name": "CUTPRO_API_KEY",
+					"description": "Your CutPro API key (Pro plan). Generate one at https://cut.pro/studio/me/api-keys.",
+					"isRequired": true,
+					"isSecret": true
+				},
+				{
+					"name": "CUTPRO_WORKSPACE_ID",
+					"description": "Only needed for multi-workspace keys.",
+					"isRequired": false
+				}
+			]
+		}
+	],
+	"remotes": [
+		{
+			"type": "streamable-http",
+			"url": "https://mcp.cut.pro"
+		}
+	]
+}
